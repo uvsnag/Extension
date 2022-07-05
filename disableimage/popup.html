@@ -2,25 +2,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>get sub</title>
-  <style>
-    body {
-      max-height: 500px;
-      overflow: auto;
-      width: 200px;
-    }
-  </style>
+  <title>DI</title>
 </head>
+<style>
+  .action-buttons{
+    width: 100px;
+  }
 
+</style>
 <body>
   <div class="action-buttons">
-    <button class="get-sub">Get Sub</button>
-    <button id="open-ytsub">O-YtSub</button>
-    <button id="open-media">O-media</button>
+    <button id = "disable-image">DI</button>
+    <br/>
+    <select name="type" id="type">
+      <option value="none">none</option>
+      <option value="link">link</option>
+      <option value="script">script</option>
+      <option value="icon">icon</option>
+    </select>
   </div>
-  <textarea id="subres" style="display: none;"></textarea>
-  <button id="coppy" style="display: none;">Coppy sub</button>
-
 
   <script src="popup.js"></script>
 </body>
