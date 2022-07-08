@@ -13,10 +13,31 @@
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "https://*.tiktok.com/*"
             ],
             "js": [
-                "background.js"
+                "lib/common.js",
+                "tiktok_background.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "js": [
+                "lib/common.js",
+                "youtube_background.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://*.facebook.com/*"
+            ],
+            "js": [
+                "lib/common.js",
+                "facebook_background.js"
             ],
             "run_at": "document_end"
         }
