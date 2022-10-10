@@ -14,17 +14,15 @@ function getComment(topic, web) {
         let cmtRes =''
         if(eleComment){
             cmtRes = eleComment.textContent;
-
             if(!cmtRes){
                 eleComment= ele.querySelector(topic.seTopic_comment_cmt).querySelectorAll(':scope > .yt-formatted-string')
                 cmtRes =''
                 for (let index = 0; index < eleComment.length; index++) {
                     const element = eleComment[index];
-                    cmtRes+=element.textContent;
+                    cmtRes += element.textContent;
                 }
-                cmtRes= cmtRes.trim()
+                cmtRes = cmtRes.trim()
             }
-
         }
 
   
@@ -35,8 +33,7 @@ function getComment(topic, web) {
           name: name,
           comment: comment
         }
-        if(`${cmt.name}${cmt.comment}`.trim().length!=0){
-
+        if(`${cmt.name}${cmt.comment}`.trim().length != 0){
             arrRes.push(cmt);
         }
       }

@@ -12,7 +12,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
     }
     var arrCmt = getComment(firstTopic, 'FB');
 
-    if(arrCmt.length==0){
+    if (arrCmt.length == 0) {
 
       let videoDetailTopic = {
         seTopic: '.l9j0dhe7.tkr6xdv7.buofh1pr.eg9m0zos >ul',
@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
       arrCmt = getComment(videoDetailTopic, 'FB');
 
       //
-      if(arrCmt.length==0){
+      if (arrCmt.length == 0) {
         let videoLiveTopic = {
           seTopic: '.rq0escxv.j83agx80.cbu4d94t.eg9m0zos.fh5enmmv.k4urcfbm',
           seTopic_comment: '.tw6a2znq.sj5x9vvc.d1544ag0.cxgpxx05',
@@ -32,7 +32,8 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
         }
         arrCmt = getComment(videoLiveTopic, 'FB');
       }
-    //  document.querySelector('.l9j0dhe7.tkr6xdv7.buofh1pr.eg9m0zos > ul').querySelector(':scope > li').querySelectorAll('.hcukyx3x.c1et5uql');
+      //  document.querySelector('.l9j0dhe7.tkr6xdv7.buofh1pr.eg9m0zos > ul').querySelector(':scope > li').querySelectorAll('.hcukyx3x.c1et5uql');
+
 
     }
 

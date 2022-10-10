@@ -10,14 +10,15 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
       seTopic_comment_name: '.tiktok-ku14zo-SpanUserNameText',
       seTopic_comment_cmt: '.tiktok-q9aj5z-PCommentText > span'
     }
+
     var arrCmt = getComment(columnTopic, 'TT');
 
-    if(arrCmt.length==0){
+    if(arrCmt.length == 0){
       let rowTopic = {
         seTopic: '.tiktok-1senhbu-DivLeftContainer',
         seTopic_comment: '.tiktok-16r0vzi-DivCommentItemContainer',
         seTopic_comment_name: '.tiktok-ku14zo-SpanUserNameText',
-       seTopic_comment_cmt: '.tiktok-q9aj5z-PCommentText > span'
+        seTopic_comment_cmt: '.tiktok-q9aj5z-PCommentText > span'
       }
       arrCmt = getComment(rowTopic, 'TT');
     }
