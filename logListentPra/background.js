@@ -2,6 +2,7 @@ var inteSubYt = null;
 var inteOpenSub = null;
 var inteGetSub = null;
 const ID = 'id-log-ssnag'
+var intv = null
 
 chrome.runtime.onMessage.addListener((msg, sender, response) => {
   if (msg.command == 'create-ele') {
@@ -15,19 +16,28 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
     para.setAttribute("id", ID);
     const node = document.createTextNode(msg.data);
     para.appendChild(node);
-    document.querySelector(msg.selector).appendChild(para);;
-  } else if (msg.command == 'get-log') {
-    var ele = document.querySelector('#transcript-i')
-    let text = ele.value
-    if (!text) {
-      text = ele.innerHTML
-      if (!text) {
-        text = ele.textContent
-      }
+
+    let slt = msg.selector
+    if (!slt || slt.length == 0) {
+      slt = '#ddd'
     }
-    console.log('text:')
-    console.log(text)
-    chrome.runtime.sendMessage({ command: "getlog-complete", data: text });
+    document.querySelector(slt).appendChild(para);
+  } else if (msg.command == 'get-log') {
+    intv = setInterval(() => {
+      var ele = document.querySelector('#transcript-i')
+      let text = ele.value
+      if (!text) {
+        text = ele.innerHTML
+        if (!text) {
+          text = ele.textContent
+        }
+      }
+      console.log('text:')
+      console.log(text)
+      chrome.runtime.sendMessage({ command: "getlog-complete", data: text });
+    }, 50);
+  } else if (msg.command == 'clear-inteval') {
+    clearInterval(intv)
   }
 });
 
