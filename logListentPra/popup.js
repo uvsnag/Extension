@@ -1,6 +1,6 @@
 // const URL_DENSTINY_SITE = "https://uvsnag.github.io/voiceToText";
 const URL_DENSTINY_SITE = "http://localhost:3000/voiceToText";
-document.querySelector('#selector').value = '#ddd id="ddd"'
+document.querySelector('#selector').value = '#ddd'
 chrome.runtime.onMessage.addListener((msg, sender, response) => {
   if (msg.command == 'getlog-complete') {
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
@@ -14,6 +14,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 });
 
 
+
 document.querySelector('#get-log').addEventListener('click', function () {
   chrome.tabs.query({  }, function (tabs) {
     let sytTab = getTabYtSub(tabs, URL_DENSTINY_SITE);
@@ -23,6 +24,13 @@ document.querySelector('#get-log').addEventListener('click', function () {
     // }, 200);
   });
 });
+
+document.querySelector('#coppy').addEventListener('click', function () {
+  navigator.clipboard.writeText(`<div style="height: 50px; background-color: rgb(238, 233, 233); color:black; position: -webkit-sticky; position: sticky; bottom:10px; text-align: center;">
+  <p id ="ddd">...</p>
+</div>`)
+});
+
 // document.querySelector('#stop').addEventListener('click', function () {
 //   // clearInterval(intv)
 //   let sytTab = getTabYtSub(tabs, URL_DENSTINY_SITE);

@@ -1,6 +1,6 @@
 {
-    "name": "get-log",
-    "description": "get-log",
+    "name": "get-log-listen",
+    "description": "get-log-listen",
     "version": "1.0",
     "permissions": [
         "<all_urls>"
@@ -8,7 +8,7 @@
     "browser_action": {
         "default_icon": "icon.png",
         "default_popup": "popup.html",
-        "default_title": "get-log"
+        "default_title": "get-log-listen"
     },
     "content_scripts": [
         {
